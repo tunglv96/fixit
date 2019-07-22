@@ -1,0 +1,205 @@
+@media screen and (max-width: 992px)
+	.wrapper
+		overflow-x: hidden
+		.header
+			.menu
+				> i 
+					display: block
+				.contact
+					background: #20242b
+					position: absolute
+					width: 100vw
+					height: 100vh
+					display: block
+					left: 0
+					top: -1000px
+					transition: .3s ease-in-out
+					padding: 60px 50px
+					overflow-x: hidden
+					overflow-y: auto
+					opacity: 0
+					visibility: hidden
+					> li
+						line-height: 50px
+						> a
+							color: $mautrang
+						&:after
+							@include after
+							content: '\f0dd'
+							font-family: 'FontAwesome'
+							left: 100%
+							color: $mautrang
+						&:hover
+							ul
+								display: block
+						&:hover
+							.feratures
+								display: block
+								ul
+									display: block
+						ul 
+							li 
+								a 
+									color: $maunhat
+									position: relative
+									&:before
+										@include after
+										content: '---'
+										left: -25px
+					> li > ul,
+					> li > .feratures ul,
+					> li > .feratures
+						position: static
+						display: none
+						background: transparent
+						box-shadow: none
+						border-right: none
+					#close
+						color: $mautrang
+						position: absolute
+						left: 95%
+						top: 0
+						display: inline-block
+						font-size: 32px
+						margin-bottom: 30px
+						cursor: pointer
+				.active
+					@include show
+					top: 0
+		.main
+			.slide
+				.item
+					.box-text
+						display: block 
+						position: static
+						background: $mauden
+						text-align: center
+						padding: 50px 0
+						transform: translate(0%,0%)
+						opacity: .9
+						h1
+							font-size: $h1_vua
+						p 
+							font-size: 26px
+						.theme_btn
+							margin-bottom: 80px
+				.owl-dots
+					top: 88%
+					left: 50%
+					transform: translateX(-50%)
+					display: block
+					flex-direction: row
+
+			.lien-he
+				flex-wrap: wrap
+				div
+					width: calc(100% / 2)
+					margin-bottom: 35px
+					&:last-child
+						margin-bottom: 0
+			.about_us
+				flex-wrap: wrap
+				padding: 100px
+				div
+					width: calc(100% / 1)
+			.blog
+				.row
+					flex-wrap: wrap
+					justify-content: space-around
+					.box-blog
+						width: calc(100% / 2 - 30px)
+						margin-bottom: 30px
+			.choose
+				flex-wrap: wrap
+				.box-left
+					width: 100%
+				.box-right
+					width: 100%
+					padding-bottom: 50px
+			.appointment
+				form
+					flex-direction: column
+					input 
+						width: 100%
+			.faq
+				.row
+					.box-blog
+						width: 100%
+				.theme_btn
+					margin-top: 0
+		.footer
+			.row
+				flex-wrap: wrap
+				padding-bottom: 60px
+				> div
+					width: calc(100% / 2)
+					margin-bottom: 50px
+				.box-center
+					width: 100%
+					margin-bottom: 150px
+				.box-left
+					order: 2
+				.box-right
+					order: 3
+					form 
+						input
+							margin: 20px 0
+@media screen and (max-width: 768px)
+	.wrapper
+		.header
+			.menu
+				> i 
+					left: 83%
+				.header-right
+					display: none
+		.main
+			.about_us,
+			.services,
+			.blog,
+			.choose .box-right,
+			.appointment
+				padding: 100px 30px 50px
+			.slide_people
+				padding: 150px 0
+			.blog 
+				.row
+					padding: 60px 0
+					.box-blog
+						margin-left: 0 
+						margin-right: 0 
+						width: 100%
+			.box-right .row
+				padding: 0
+			.choose .box
+				padding: 0
+			.lien-he
+				div
+					width: 100%
+			.services
+				padding: 100px 120px 50px
+				.box-services
+					.box_icon_text
+						width: 100%
+		.footer
+			.row
+				padding: 100px 30px 50px
+				> div
+					width: 100%
+			
+@media screen and (max-width: 567px)
+	.wrapper
+		.header
+			.menu
+				.logo
+					position: absolute
+					left: 20px
+				> i 
+					left: 93%
+				.contact
+					padding: 60px 30px
+					#close 
+						left: 90%
+
+		.main 
+			.services
+				padding: 100px 30px 50px

@@ -1,0 +1,592 @@
+// color
+$mauden: black
+$maunhat: gray
+$mautrang: white
+$mautim: #937dc9
+$mauvien: #ccc6c673
+$shadow_header: #0000006b
+$shadow_menucon: #aba2a2
+$bg_sevices: #20242c
+
+// width-height
+$height_menu: 80px
+//font-size
+$chu_menu: 12px
+$font_chuan: 18px
+$the_p_nhat: 32px
+$h1_dam: 72px
+$h1_vua: 52px
+$font_weight_dam: 900
+//mixin
+@mixin flex()
+	display: flex
+	justify-content: space-around
+@mixin after()
+	content: ''
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+@mixin hidden()
+	visibility: hidden
+	opacity: 0
+	transition: .2s ease-in-out
+@mixin show()
+	top: 80px
+	visibility: visible
+	opacity: 1
+*
+	box-sizing: border-box
+	padding: 0
+	margin: 0
+a
+	text-decoration: none
+	color: $mauden
+	transition: .2s ease-in-out
+	&:hover
+		color: $mautim
+ul
+	display: flex
+ul li
+	list-style: none
+	margin-right: 30px
+img
+	display: block
+	max-width: 100%
+	transition: .4s ease-in-out
+.theme_btn
+	border: 1px solid $mautim
+	padding: 15px 30px
+	margin-top: 30px
+	display: inline-block
+	color: $mautim
+	transition: .3s ease-in-out
+	font-weight: bold
+	font-size: $chu_menu
+	&:hover
+		background: $mautim
+		color: $mautrang
+.owl-theme
+	.owl-nav
+		display: none
+button 
+	background: transparent
+	margin: 0 auto
+	cursor: pointer
+	&:hover
+		background: $mautim
+html, body
+	width: 100%
+	height: 100%
+	font-family: 'Montserrat', sans-serif
+.wrapper
+	max-width: 100%
+	height: 100vh
+	scroll-behavior: smooth
+	overflow-y: scroll
+.header
+	background: $mautrang
+	position: fixed
+	width: 100%
+	box-shadow: 0 2px 5px $shadow_header
+	z-index: 999
+	.menu
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 0 80px
+		height: $height_menu
+		line-height: $height_menu
+		.logo
+			img
+				max-width: 160px
+		> i
+			font-size: 32px
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			display: none
+		.header-right
+			line-height: 1
+			padding: 10px 20px
+			background: $mautim
+			border: 1px solid $mautim
+			margin: 15px 0
+			transition: .3s ease-in-out
+			&:hover
+				background: transparent
+				a
+					color: $mautim
+			a
+				color: $mautrang
+		.contact
+			#close
+				display: none
+			ul
+				li 
+					padding: 14px 20px
+			li
+				a
+					font-size: $chu_menu
+					font-weight: 510
+					text-transform: uppercase
+			> li
+				position: relative
+				cursor: pointer
+			> li > ul,
+			> li > .feratures ul,
+			> li > .feratures
+				position: absolute
+				top: 90px
+				flex-direction: column
+				line-height: 1
+				background: $mautrang
+				width: 200px
+				box-shadow: 0 -1px 5px $shadow_menucon
+				padding: 15px 0
+				@include hidden
+			> li
+				&:hover
+					ul
+						@include show
+			> li > .feratures
+				display: flex
+				flex-direction: row
+				padding: 10px 20px
+				left: -420px
+				width: auto
+			> li:hover
+				.feratures
+					@include show
+			> li > .feratures ul
+				position: static
+				box-shadow: none
+				border-right: 1px solid $mauvien
+				&:last-child
+					border-right: none
+		.feratures ul > li
+			&:first-child
+				> a
+					font-weight: $font_weight_dam
+					font-size: 17px
+/*----------------------------------end header -------------------------------*/
+.main
+	.slide
+		padding-top: 80px
+		position: relative
+		.owl-dots
+			position: absolute
+			right: 100px
+			top: 50%
+			display: flex
+			flex-direction: column
+			opacity: .5
+		.item
+			.box-text
+				position: absolute
+				top: 50%
+				left: 50%
+				text-align: center
+				transform: translate(-50%, -50%)
+				z-index: 99
+				p
+					font-size: $the_p_nhat
+					color: $maunhat
+					font-weight: 300
+				h1
+					font-size: $h1_dam
+					font-weight: $font_weight_dam
+					color: $mautrang
+					margin-top: -15px
+			.box-text.one
+				left: 100px
+				text-align: left
+				transform: translateY(-50%)
+	/*------------------end-slide---------*/
+	.lien-he
+		background: $mautrang
+		@include flex
+		padding: 50px 0
+		border-bottom: solid 1px $mauvien
+		text-align: center
+		h4
+			font-weight: 600
+			text-transform: uppercase
+		p
+			font-size: $the_p_nhat
+			font-weight: 200
+		&:last-child
+			background: $mautim
+			color: $mautrang
+	/*-----------------end-lien-he---------*/
+	.about_us
+		display: flex
+		padding: 150px 100px
+		background: $mautrang
+		.box-img
+			width: 50%
+			padding: 30px
+			text-align: center
+		.welcome
+			width: 50%
+			.title
+				font-weight: 200
+				font-size: $the_p_nhat
+			h1
+				font-size: $h1_vua
+				font-weight: $font_weight_dam
+				opacity: .8
+			.text
+				color: $maunhat
+				line-height: 28px
+				margin-top: 30px
+	/*-----------------end-about_us-------*/
+	.services
+		background: $bg_sevices
+		padding: 150px 50px
+		text-align: center
+		.box-services
+			display: flex
+			flex-wrap: wrap
+			.box_icon_text
+				width: calc(100% / 3)
+				text-align: center
+				padding: 0 10px
+				margin-bottom: 40px
+				&:hover
+					i
+						animation: hieuung .8s
+				i
+					font-size: 42px
+					color: $mautim
+				h4
+					a
+						color: #f5f5f5f5
+						opacity: .7
+						margin: 20px 0
+						display: inline-block
+						&:hover
+							color: $mautim
+				p
+					color: $maunhat
+					opacity: .5
+					line-height: 24px
+		h2
+			color: $mautrang
+			font-size: 38px
+			font-weight: $font_weight_dam
+			margin-bottom: 50px
+	/*-----------------end-services--------------*/
+	.blog
+		padding: 150px 50px 100px
+		text-align: center 
+		> h2
+			font-size: 40px
+			opacity: .7
+			font-weight: $font_weight_dam
+		> p 
+			font-size: 20px
+			color: $maunhat
+			margin: 15px
+		.row
+			display: flex
+			padding: 60px 20px
+			.box-blog
+				width: calc(100% / 3)
+				margin: 0 15px
+				border: solid 1px $mauvien
+				cursor: pointer
+				&:hover
+					.item_img
+						&:after
+							@include show
+							top: 0
+				.item_img
+					position: relative
+					&:after
+						@include after
+						background: #00000087
+						@include hidden
+				.box-text
+					padding: 50px 30px
+					h4
+						a
+							opacity: .8
+							margin-bottom: 20px
+							display: inline-block
+							line-height: 28px
+							font-weight: 600
+					p
+						color: $maunhat
+						line-height: 28px
+				.entry-meta
+					@include flex
+					div
+						border-top: solid 1px $mauvien
+						width: calc(100% / 3)
+						padding: 20px
+						display: flex
+						flex-direction: column
+						&:nth-child(2)
+							border-left: solid 1px $mauvien
+							border-right: solid 1px $mauvien
+						span
+							color: $maunhat
+							font-size: $chu_menu
+							margin-top: 10px
+							text-transform: uppercase
+						i
+							color: $mautim
+	/*------------------end-blog-------------*/						
+	.choose
+		display: flex
+		background: $mauvien
+		.box-left
+			overflow: hidden
+			background: $mauvien
+			.change_img
+				transform: scale(1.6)
+		.box-right
+			width: 50%
+			.box
+				padding: 60px 60px 0
+				.title
+					font-weight: 200
+					font-size: 32px
+				h1
+					font-size: 52px
+					font-weight: $font_weight_dam
+					opacity: .8
+				p.text
+					line-height: 28px
+					color: $maunhat
+					font-size: 19px
+					margin: 15px 0 30px
+			.box-click
+				flex-direction: column
+				.item
+					margin-bottom: 15px
+					cursor: pointer
+					margin-right: 0
+					transition: .2s ease-in-out
+					h4
+						background: $mautim
+						display: flex
+						justify-content: space-between
+						padding: 15px
+						font-weight: 500
+						color: $mautrang
+					.vb
+						background: $mautrang
+						color: $maunhat
+						padding: 20px
+						display: none
+					.active
+						display: block
+				.change 
+					padding: 10px
+	/*------------------end choose*----------------*/
+	.slide_people
+		text-align: center
+		padding: 150px
+		.item
+			img
+				width: 150px
+				height: 150px
+				border-radius: 50%
+				margin: 0 auto
+			h3
+				font-size: 32px
+				margin-top: 30px
+				opacity: .8
+			p 
+				font-size: 14px
+			p.text
+				font-size: 18px
+				line-height: 30px
+				padding: 0 30px
+				margin-bottom: 30px
+				color: $maunhat
+			span
+				font-size: 54px
+				color: $mautim
+				font-family: "vidaloka", serif
+				display: inline-block
+	/*------------------end slide_people------------*/
+	.appointment
+		background: $bg_sevices
+		padding: 150px 80px
+		text-align: center
+		h2
+			font-size: 48px
+			color: $mautrang
+		p
+			font-size: 22px
+			color: $maunhat
+			margin: 10px 0 60px
+		form
+			@include flex
+			flex-wrap: wrap
+			input,
+			select,
+			textarea
+				padding: 15px 20px
+				background: $mautrang
+				outline: none
+				color: $maunhat
+				font-size: 12px
+				margin-bottom: 30px
+			input
+				width: 40%
+			textarea
+				width: 100%
+	/*------------------end-appointment---------*/
+	.faq
+		.theme_btn
+			background-color: $mautim
+			color: $mautrang
+			&:hover
+				background: transparent
+				color: $mautim
+		.box-blog
+			position: relative
+			.icon_down
+				position: absolute
+				bottom: 20px
+				transition: .2s ease-in-out
+				padding: 5px
+				&:hover
+					bottom: 15px
+					color: $mautim
+			.message
+				position: absolute
+				top: -15px
+				left: 48%
+				font-size: 18px
+				background: $mautim
+				padding: 5px 10px
+				color: $mautrang
+				border-radius: 50%
+				transition: .3s ease-in-out
+				&:hover
+					animation: .8s hieuung
+	/*------------------end-faq---------*/
+.footer
+	.row
+		padding: 150px 60px
+		background: $bg_sevices
+		text-align: center
+		@include flex
+		position: relative
+		.box-center
+			position: relative
+		> div
+			width: calc(100% / 3)
+			img
+				margin: -10px auto 40px
+			p 
+				color: $maunhat
+				line-height: 28px
+				margin-bottom: 10px
+				i
+					color: $mautim
+					margin-right: 15px
+				&:last-child
+					color: white
+					transition: .3s ease-in-out
+					&:hover
+						color: $mautim
+			input
+				width: 80%
+				padding: 15px
+				text-align: center
+				outline: none
+			p.text
+				margin-bottom: 30px
+		h2
+			font-size: 32px
+			opacity: .9
+			font-weight: $font_weight_dam
+			color: $mautrang
+			margin-bottom: 40px
+		ul
+			flex-direction: column
+			li
+				padding: 15px 60px
+				border-bottom: 1px solid $mauvien
+				text-align: center
+				&:first-child
+					padding-top: 0
+				a 
+					color: $maunhat
+					&:hover
+						color: $mautrang
+		.share
+			position: absolute
+			left: 50%
+			transform: translateX(-50%)
+			margin: 20px 0
+			a 
+				margin-right: 15px
+				border: solid 1px $mauvien
+				width: 40px
+				height: 40px
+				line-height: 40px
+				border-radius: 50%
+				display: inline-block
+				color: #507cbe
+				&:nth-child(2)
+					color: #30abef
+				&:nth-child(3)
+					color: #d93e2d
+				&:hover
+					color: $mautrang
+					background: #507cbe
+					border-color: #507cbe
+				&:hover:nth-child(2)
+					background: #30abef
+					border-color: #30abef
+				&:hover:nth-child(3)
+					background: #d93e2d
+					border-color: #d93e2d
+	.copyright
+		background: $mautrang
+		padding: 30px
+		text-align: center
+		p
+			color: $maunhat
+.scrool_top
+	position: absolute
+	bottom: 50px
+	left: 90%
+	z-index: 99
+	a
+		color: $mautrang
+		width: 50px
+		height: 50px
+		display: inline-block
+		line-height: 50px
+		border-radius: 50%
+		text-align: center
+		background: seagreen
+		font-size: 35px
+		i 
+			margin-top: 13px
+@keyframes hieuung
+	0%
+		transform: scale(.8)
+		opacity: 1
+	50%
+		transform: scale(1.3)
+		opacity: 0
+	100%
+		transform: scale(1)
+		opacity: 1
+
+@import "homeRwd"
+
+
+
+
